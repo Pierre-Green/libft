@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 14:54:13 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/10/16 16:53:00 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/10/25 17:13:47 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char				*ft_itoa(int n)
 	size_t			pow;
 	char			*result;
 
-	pow = ft_count_digits(n);
+	pow = ft_count_uint_base(n, 10);
 	if ((result = ft_calloc(length(pow, sign) + 1, sizeof(char))) == NULL)
 		return (NULL);
 	if (!sign)

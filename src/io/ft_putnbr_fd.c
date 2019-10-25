@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:29:13 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/10/08 18:55:09 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/10/25 17:13:37 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void			ft_int_min(int fd)
 
 void				ft_putnbr_fd(int n, int fd)
 {
-	const size_t	len = ft_count_digits(n);
+	const size_t	len = ft_count_uint_base(n, 10);
 	char			buff[11];
 	size_t			i;
 	int				tmp;
