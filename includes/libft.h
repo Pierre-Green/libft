@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/10/17 16:44:04 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/10/25 17:08:33 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ size_t				ft_pow(int n, int power);
 
 size_t				ft_idkpow(int n, int powa);
 
-size_t				ft_count_digits(int n);
+size_t				ft_count_uint_base(uint64_t n, uint32_t base);
 
 /*
 ** Lists

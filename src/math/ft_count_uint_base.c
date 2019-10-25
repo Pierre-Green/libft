@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_digits.c                                  :+:      :+:    :+:   */
+/*   ft_count_uint_base.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 16:33:55 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/10/08 16:34:50 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/10/25 17:08:21 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t				ft_count_digits(int n)
+size_t				ft_count_uint_base(uint64_t n, uint32_t base)
 {
-	size_t			pow;
+	uint32_t		pow;
 
 	pow = 0;
 	if (n == 0)
@@ -22,7 +22,7 @@ size_t				ft_count_digits(int n)
 	while (n)
 	{
 		pow++;
-		n /= 10;
+		n /= base;
 	}
 	return (pow);
 }
