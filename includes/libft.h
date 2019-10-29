@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/10/25 19:18:36 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/10/29 14:21:41 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 typedef enum		e_bool
 {
-	true,
-	false
+	false = 0,
+	true = 42
 }					t_bool;
 
 /*
