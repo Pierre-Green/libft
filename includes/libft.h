@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/12 19:45:03 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/12 20:06:33 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
 
 typedef enum		e_bool
 {
@@ -74,6 +77,14 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 /*
 ** I/O
 */
+typedef struct		s_buff
+{
+	char			buff[BUFFER_SIZE];
+	size_t			len;
+	char			eol;
+	char			eof;
+	struct s_buff	*next;
+}					t_buff;
 
 void				ft_putchar_fd(char c, int fd);
 
@@ -82,6 +93,14 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 
 void				ft_putnbr_fd(int n, int fd);
+
+int					get_next_line(int fd, char **line);
+
+int					flush_to_eol(t_buff **buff, char **line);
+
+t_buff				*clear_buff_next(t_buff *buff);
+
+void				trim_buff(t_buff *buff, unsigned int nl);
 
 /*
 ** Other helpers
