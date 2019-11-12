@@ -1,3 +1,5 @@
+FT_SRCS+=/args/ft_args_end.c
+FT_SRCS+=/args/ft_args_start.c
 FT_SRCS+=/io/ft_putchar_fd.c
 FT_SRCS+=/io/ft_putendl_fd.c
 FT_SRCS+=/io/ft_putnbr_fd.c
