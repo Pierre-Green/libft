@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/10/29 14:21:41 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/12 19:45:03 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,13 @@ int					ft_tolower(int c);
 /*
 ** Maths
 */
+typedef struct		s_vec3d
+{
+	double			x;
+	double			y;
+	double			z;
+}					t_vec3d;
+
 size_t				ft_pow(int n, int power);
 
 size_t				ft_idkpow(int n, int powa);
@@ -157,5 +164,10 @@ typedef struct		s_args
 }					t_args;
 t_args				*ft_args_start(int argc, char **argv);
 t_args				*ft_args_end(t_args **args);
+
+/*
+** Colors
+*/
+typedef uint32_t	t_color;
 
 #endif
