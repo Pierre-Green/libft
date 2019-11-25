@@ -6,11 +6,11 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:09:13 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/22 18:29:48 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/26 00:56:58 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 size_t				len_to_eol(t_buff *buff)
 {

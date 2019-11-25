@@ -6,11 +6,11 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/17 19:49:24 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/22 18:33:31 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/26 00:56:49 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 static t_buff		*get_initial_buff(void)
 {
