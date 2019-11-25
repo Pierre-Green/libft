@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/25 21:53:44 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/25 22:11:39 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ void				ft_putnbr_fd(int n, int fd);
 */
 
 int					ft_atoi(const char *str);
+float				ft_atof(const char *str);
 char				*ft_itoa(int n);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);

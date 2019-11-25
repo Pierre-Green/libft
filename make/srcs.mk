@@ -34,6 +34,7 @@ FT_SRCS+=/mem/ft_memcmp.c
 FT_SRCS+=/mem/ft_memcpy.c
 FT_SRCS+=/mem/ft_memmove.c
 FT_SRCS+=/mem/ft_memset.c
+FT_SRCS+=/miscs/ft_atof.c
 FT_SRCS+=/miscs/ft_atoi.c
 FT_SRCS+=/miscs/ft_color.c
 FT_SRCS+=/miscs/ft_isalnum.c
