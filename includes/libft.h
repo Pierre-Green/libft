@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/25 19:54:54 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/25 21:53:44 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <math.h>
+# include <fcntl.h>
 # ifndef GNL_BUFFER_SIZE
 #  define GNL_BUFFER_SIZE 32
 # endif
