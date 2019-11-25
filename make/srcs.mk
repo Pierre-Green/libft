@@ -41,6 +41,7 @@ FT_SRCS+=/miscs/ft_isalpha.c
 FT_SRCS+=/miscs/ft_isascii.c
 FT_SRCS+=/miscs/ft_isdigit.c
 FT_SRCS+=/miscs/ft_isprint.c
+FT_SRCS+=/miscs/ft_isspace.c
 FT_SRCS+=/miscs/ft_itoa.c
 FT_SRCS+=/miscs/ft_tolower.c
 FT_SRCS+=/miscs/ft_toupper.c

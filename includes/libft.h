@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/25 19:34:17 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/25 19:54:54 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
