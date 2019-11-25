@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/25 19:19:40 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/25 19:34:17 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,5 +158,7 @@ t_args				*ft_args_end(t_args **args);
 ** Colors
 */
 typedef uint32_t	t_color;
+t_color				ft_color_rgb(uint8_t r, uint8_t g, uint8_t b);
+t_color				ft_color_rgba(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
 
 #endif
