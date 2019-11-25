@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 19:03:58 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/25 22:01:00 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/25 23:54:18 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ t_args				*ft_args_start(int argc, char **argv)
 	if (!(args = get_args(argc)))
 		return (NULL);
 	i = 0;
+	node = 0;
 	while (i < (size_t)argc - 1)
 	{
 		if (!node)
