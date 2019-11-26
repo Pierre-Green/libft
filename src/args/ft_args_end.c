@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 19:15:34 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/10/25 19:17:48 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/26 19:51:23 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 
 t_args				*ft_args_end(t_args **args)
 {
-	t_arg			*node;
-	t_arg			*tmp;
+	unsigned int	i;
 
-	node = (*args)->args;
-	while (node)
+	i = 0;
+	while (i < (*args)->count)
 	{
-		tmp = node;
-		node = node->next;
-		free(tmp->value);
-		free(tmp);
+		free((void *)(*args)->args[i]);
+		i++;
 	}
 	free((*args));
 	*args = NULL;

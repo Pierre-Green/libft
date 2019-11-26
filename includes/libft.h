@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/26 01:08:40 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/26 19:47:40 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,15 +141,10 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 /*
 ** Args
 */
-typedef struct		s_arg
-{
-	char			*value;
-	struct s_arg	*next;
-}					t_arg;
 typedef struct		s_args
 {
 	size_t			count;
-	t_arg			*args;
+	char			**args;
 }					t_args;
 t_args				*ft_args_start(int argc, char **argv);
 t_args				*ft_args_end(t_args **args);
