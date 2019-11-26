@@ -6,7 +6,7 @@
 #    By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/07 18:57:53 by pguthaus          #+#    #+#              #
-#    Updated: 2019/10/18 18:50:53 by pguthaus         ###   ########.fr        #
+#    Updated: 2019/11/26 01:05:34 by pguthaus         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ include make/config.mk
 include make/srcs.mk
 
 # Compilation
-CFLAGS			=			-g -fsanitize=address
+CFLAGS			+=			-g -fsanitize=address
 
 # Paths
 OUTDIR			=			./objs/dev/

@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/26 00:59:50 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/26 01:05:17 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdarg.h>
+# include <math.h>
 # ifndef GNL_BUFFER_SIZE
 #  define GNL_BUFFER_SIZE 32
 # endif
@@ -90,14 +91,28 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 
 /*
+** Vecs
+*/
+typedef struct		s_vec3f
+{
+	float			x;
+	float			y;
+	float			z;
+}					t_vec3f;
+t_vec3f				ft_vec3f_init(float x, float y, float z);
+t_vec3f				ft_vec3f_init1(float a);
+t_vec3f				ft_vec3f_add(t_vec3f vec1, t_vec3f vec2);
+t_vec3f				ft_vec3f_sub(t_vec3f vec1, t_vec3f vec2);
+t_vec3f				ft_vec3f_mul(t_vec3f vec, float fac);
+t_vec3f				ft_vec3f_cross(t_vec3f vec1, t_vec3f vec2);
+t_vec3f				ft_vec3f_normalize(t_vec3f vec);
+float				ft_vec3f_dot(t_vec3f vec1, t_vec3f vec2);
+float				ft_vec3f_norm(t_vec3f vec);
+float				ft_vec3f_len(t_vec3f vec);
+
+/*
 ** Maths
 */
-typedef struct		s_vec3d
-{
-	double			x;
-	double			y;
-	double			z;
-}					t_vec3d;
 size_t				ft_pow(int n, int power);
 size_t				ft_idkpow(int n, int powa);
 size_t				ft_count_uint_base(uint64_t n, uint32_t base);
