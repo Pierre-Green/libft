@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/26 01:05:17 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/26 01:08:40 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,14 @@ void				ft_putnbr_fd(int n, int fd);
 */
 
 int					ft_atoi(const char *str);
+float				ft_atof(const char *str);
 char				*ft_itoa(int n);
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isascii(int c);
 int					ft_isprint(int c);
+int					ft_isspace(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
@@ -156,5 +158,7 @@ t_args				*ft_args_end(t_args **args);
 ** Colors
 */
 typedef uint32_t	t_color;
+t_color				ft_color_rgb(uint8_t r, uint8_t g, uint8_t b);
+t_color				ft_color_rgba(uint8_t r, uint8_t g, uint8_t b, uint8_t a);
 
 #endif
