@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/25 19:03:58 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/26 19:50:58 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/26 19:55:44 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_args				*ft_args_start(int argc, char **argv)
 	i = 0;
 	while (i < (size_t)argc - 1)
 	{
-		args->args[i] = argv[i];
+		args->args[i] = argv[i + 1];
 		i++;
 	}
 	return (args);
