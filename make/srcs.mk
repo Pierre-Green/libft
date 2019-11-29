@@ -1,5 +1,8 @@
 FT_SRCS+=/args/ft_args_end.c
 FT_SRCS+=/args/ft_args_start.c
+FT_SRCS+=/color/get.c
+FT_SRCS+=/color/init.c
+FT_SRCS+=/color/set.c
 FT_SRCS+=/io/ft_putchar_fd.c
 FT_SRCS+=/io/ft_putendl_fd.c
 FT_SRCS+=/io/ft_putnbr_fd.c
@@ -52,7 +55,6 @@ FT_SRCS+=/mem/ft_memmove.c
 FT_SRCS+=/mem/ft_memset.c
 FT_SRCS+=/miscs/ft_atof.c
 FT_SRCS+=/miscs/ft_atoi.c
-FT_SRCS+=/miscs/ft_color.c
 FT_SRCS+=/miscs/ft_isalnum.c
 FT_SRCS+=/miscs/ft_isalpha.c
 FT_SRCS+=/miscs/ft_isascii.c
