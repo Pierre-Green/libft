@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 22:10:40 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/25 23:08:38 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/29 05:09:42 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,8 @@ float				ft_atof(const char *str)
 		fac = -1;
 	while (*str)
 	{
-		if (*str == '.' && (point_seen = true))
-		{
-			str++;
-			continue ;
-		}
+		if (*str == '.')
+			point_seen = true;
 		else if (*str - '0' >= 0 && *str - '0' <= 9)
 		{
 			if (point_seen)
