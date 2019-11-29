@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/29 04:56:35 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/11/29 07:35:42 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #  define GNL_BUFFER_SIZE 32
 # endif
 # define MAX(a, b) (a < b ? b : a)
+# define MIN(a, b) (a < b ? a : b)
 
 typedef enum		e_bool
 {
