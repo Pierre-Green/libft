@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/29 07:35:42 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/12/03 03:51:32 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <limits.h>
 # include <stdarg.h>
 # include <math.h>
+# include "mlx_keys.h"
 # ifndef GNL_BUFFER_SIZE
 #  define GNL_BUFFER_SIZE 32
 # endif
