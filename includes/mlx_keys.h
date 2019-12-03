@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 03:46:17 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/12/03 03:51:38 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/12/03 04:13:39 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,10 @@
 # define KEY_ARROW_UP 126
 # define KEY_ARROW_RIGHT 124
 # define KEY_ARROW_DOWN 125
+# define KEY_PAD_0 82
+# define KEY_PAD_DOT 65
+# define KEY_PAD_8 91
+# define KEY_PAD_6 88
+# define KEY_PAD_2 84
+# define KEY_PAD_4 86
 #endif
