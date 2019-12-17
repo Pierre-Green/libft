@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/12/03 03:51:32 by pguthaus         ###   ########.fr       */
+/*   Updated: 2019/12/17 03:09:34 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # ifndef GNL_BUFFER_SIZE
 #  define GNL_BUFFER_SIZE 32
 # endif
+# define ABS(a) (a >= 0 ? a : -a)
 # define MAX(a, b) (a < b ? b : a)
 # define MIN(a, b) (a < b ? a : b)
 
@@ -114,6 +115,7 @@ t_vec3f				ft_vec3f_normalize(t_vec3f vec);
 float				ft_vec3f_dot(t_vec3f vec1, t_vec3f vec2);
 float				ft_vec3f_norm(t_vec3f vec);
 float				ft_vec3f_len(t_vec3f vec);
+float				ft_vec3f_dist(t_vec3f vec1, t_vec3f vec2);
 
 /*
 ** Maths
