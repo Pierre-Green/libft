@@ -67,6 +67,7 @@ FT_SRCS+=/miscs/ft_tolower.c
 FT_SRCS+=/miscs/ft_toupper.c
 FT_SRCS+=/str/ft_split.c
 FT_SRCS+=/str/ft_strchr.c
+FT_SRCS+=/str/ft_strcmp.c
 FT_SRCS+=/str/ft_strdup.c
 FT_SRCS+=/str/ft_strjoin.c
 FT_SRCS+=/str/ft_strlcat.c
