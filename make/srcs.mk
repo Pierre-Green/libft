@@ -75,6 +75,7 @@ FT_SRCS+=/str/ft_strlcpy.c
 FT_SRCS+=/str/ft_strlen.c
 FT_SRCS+=/str/ft_strmapi.c
 FT_SRCS+=/str/ft_strncmp.c
+FT_SRCS+=/str/ft_strndup.c
 FT_SRCS+=/str/ft_strnstr.c
 FT_SRCS+=/str/ft_strrchr.c
 FT_SRCS+=/str/ft_strtrim.c
