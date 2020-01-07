@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:54:11 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/12/03 02:15:25 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/01/07 16:47:21 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # define FLAG_ZEROPAD 0x0F000000
 # define FLAG_NEGATIV 0x00F00000
 # define OUT_NULL "(null)"
-# define ABS(a) (a < 0 ? a * -1 : a)
 # define PTR_LEN 12
 # define STR_NULL "(null)"
 
