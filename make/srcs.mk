@@ -3,6 +3,7 @@ FT_SRCS+=/args/ft_args_start.c
 FT_SRCS+=/color/get.c
 FT_SRCS+=/color/init.c
 FT_SRCS+=/color/set.c
+FT_SRCS+=/env/get_env.c
 FT_SRCS+=/io/ft_putchar_fd.c
 FT_SRCS+=/io/ft_putendl_fd.c
 FT_SRCS+=/io/ft_putnbr_fd.c

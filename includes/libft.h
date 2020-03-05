@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/01/07 19:42:55 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/03/05 22:04:02 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,4 +171,8 @@ t_color				ft_color_set_g(t_color color, uint8_t g);
 t_color				ft_color_set_b(t_color color, uint8_t b);
 t_color				ft_color_set_a(t_color color, uint8_t a);
 
+/*
+** Env
+*/
+char				*get_env(const char *key, char **env);
 #endif
