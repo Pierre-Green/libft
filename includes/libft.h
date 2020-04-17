@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pguthaus <pguthaus@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/03/05 22:04:02 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/04/17 17:16:54 by pguthaus           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdarg.h>
+# include <stdint.h>
 # include <math.h>
 # include "mlx_keys.h"
 # ifndef GNL_BUFFER_SIZE
