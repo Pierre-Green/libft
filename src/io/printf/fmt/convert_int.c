@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 20:10:43 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/26 00:58:02 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/04/18 02:01:52 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ static void			convert_int_negativ(t_state *state, t_fmt fmt, size_t len)
 	size_t			minwidth;
 	size_t			count;
 
-	count = ft_count_uint_base((unsigned int)ABS(value), 10);
+	count = ft_count_uint_base((unsigned int)ft_abs(value), 10);
 	if (fmt.precision < 0)
 		fmt.minwidth = 0;
-	minwidth = MAX(len, fmt.minwidth);
+	minwidth = ft_max(len, fmt.minwidth);
 	if (fmt.precision < 0)
-		minwidth = MAX(minwidth, (size_t)(fmt.precision * -1));
+		minwidth = ft_max(minwidth, (size_t)(fmt.precision * -1));
 	state->count += write_int(value, state->buff, count, len)
 		+ buff_write_nchar(state->buff, minwidth - len, ' ');
 }
@@ -57,8 +57,8 @@ static void			convert_int_zeropad(t_state *state, t_fmt fmt)
 	size_t			len;
 	size_t			minwidth;
 
-	len = ft_count_uint_base((unsigned int)ABS(value), 10);
-	minwidth = MAX(len, fmt.minwidth);
+	len = ft_count_uint_base((unsigned int)ft_abs(value), 10);
+	minwidth = ft_max(len, fmt.minwidth);
 	state->count += write_int(value, state->buff, len, minwidth);
 }
 
@@ -68,8 +68,8 @@ static void			convert_int_default(t_state *state, t_fmt fmt, size_t len)
 	size_t			minwidth;
 	size_t			count;
 
-	count = ft_count_uint_base((unsigned int)ABS(value), 10);
-	minwidth = MAX(len, fmt.minwidth);
+	count = ft_count_uint_base((unsigned int)ft_abs(value), 10);
+	minwidth = ft_max(len, fmt.minwidth);
 	if (fmt.precision < 0)
 		convert_int_negativ(state, fmt, len);
 	else
@@ -81,9 +81,9 @@ void				convert_int(t_state *state, t_fmt fmt)
 {
 	size_t			len;
 
-	len = ft_count_uint_base(ABS(fmt.value.i), 10);
+	len = ft_count_uint_base(ft_abs(fmt.value.i), 10);
 	if (fmt.precision >= 0)
-		len = MAX(len, (size_t)fmt.precision);
+		len = ft_max(len, (size_t)fmt.precision);
 	if (fmt.value.i == 0 && fmt.precised && fmt.precision == 0)
 		len = 0;
 	if (fmt.value.i < 0)

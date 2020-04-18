@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 17:59:45 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/26 00:58:02 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/04/18 02:01:52 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void			convert_char(t_state *state, t_fmt fmt)
 	size_t		minwidth;
 
 	if (fmt.precision < 0)
-		fmt.minwidth = ABS(fmt.precision);
-	minwidth = MAX(fmt.minwidth, 1);
+		fmt.minwidth = ft_abs(fmt.precision);
+	minwidth = ft_max(fmt.minwidth, 1);
 	if (fmt.flags & FLAG_NEGATIV || fmt.precision < 0)
 		convert_char_negativ(state, fmt, minwidth);
 	else if (fmt.flags & FLAG_ZEROPAD)

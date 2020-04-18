@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pguthaus <pguthaus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/17 17:16:54 by pguthaus           ###   ########.fr       */
+/*   Updated: 2020/04/18 02:03:02 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@
 # ifndef GNL_BUFFER_SIZE
 #  define GNL_BUFFER_SIZE 32
 # endif
-# define ABS(a) (a >= 0 ? a : -a)
-# define MAX(a, b) (a < b ? b : a)
-# define MIN(a, b) (a < b ? a : b)
 
 typedef enum		e_bool
 {
@@ -126,6 +123,9 @@ float				ft_vec3f_dist(t_vec3f vec1, t_vec3f vec2);
 size_t				ft_pow(int n, int power);
 size_t				ft_idkpow(int n, int powa);
 size_t				ft_count_uint_base(uint64_t n, uint32_t base);
+unsigned int		ft_abs(int i);
+int					ft_min(int a, int b);
+int					ft_max(int a, int b);
 
 /*
 ** Lists

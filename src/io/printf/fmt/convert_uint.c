@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 20:10:43 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/26 00:58:02 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/04/18 02:01:52 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void				convert_uint_negativ(t_state *state, t_fmt fmt,
 {
 	size_t				minwidth;
 
-	minwidth = MAX(len, fmt.minwidth);
+	minwidth = ft_max(len, fmt.minwidth);
 	state->count += write_uint(fmt.value.u, state->buff, len);
 	state->count += buff_write_nchar(state->buff, minwidth - len, ' ');
 }
@@ -43,7 +43,7 @@ static void				convert_uint_zeropad(t_state *state, t_fmt fmt,
 {
 	size_t				minwidth;
 
-	minwidth = MAX(len, fmt.minwidth);
+	minwidth = ft_max(len, fmt.minwidth);
 	state->count += write_uint(fmt.value.u, state->buff, minwidth);
 }
 
@@ -52,7 +52,7 @@ static void				convert_uint_default(t_state *state, t_fmt fmt,
 {
 	size_t				minwidth;
 
-	minwidth = MAX(len, fmt.minwidth);
+	minwidth = ft_max(len, fmt.minwidth);
 	state->count += buff_write_nchar(state->buff, minwidth - len, ' ')
 		+ write_uint(fmt.value.u, state->buff, len);
 }
@@ -64,9 +64,9 @@ void					convert_uint(t_state *state, t_fmt fmt)
 
 	len = ft_count_uint_base(value, 10);
 	if (fmt.precision >= 0)
-		len = MAX(len, (size_t)fmt.precision);
+		len = ft_max(len, (size_t)fmt.precision);
 	else if (fmt.precision < 0)
-		fmt.minwidth = ABS(fmt.precision);
+		fmt.minwidth = ft_abs(fmt.precision);
 	if (value == 0 && fmt.precised && fmt.precision == 0)
 		len = 0;
 	if (fmt.flags & FLAG_NEGATIV || fmt.precision < 0)

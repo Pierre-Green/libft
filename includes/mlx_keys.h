@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   mlx_keys.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pguthaus <pguthaus@student.42.fr>              +#+  +:+       +#+        */
+/*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 03:46:17 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 00:11:30 by pguthaus           ###   ########.fr       */
+/*   Updated: 2020/04/18 01:54:00 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MLX_KEYS_H
+# define MLX_KEYS_H
+
 # ifdef __APPLE__
 #  define KEY_ESC 53
 #  define KEY_W 13
