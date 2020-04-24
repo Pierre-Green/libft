@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 02:03:02 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/04/24 20:56:01 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,10 @@ float				ft_vec3f_dot(t_vec3f vec1, t_vec3f vec2);
 float				ft_vec3f_norm(t_vec3f vec);
 float				ft_vec3f_len(t_vec3f vec);
 float				ft_vec3f_dist(t_vec3f vec1, t_vec3f vec2);
+t_vec3f				ft_vec3f_rotx(t_vec3f vec, float x);
+t_vec3f				ft_vec3f_roty(t_vec3f vec, float y);
+t_vec3f				ft_vec3f_rotz(t_vec3f vec, float z);
+t_vec3f				ft_vec3f_rot(t_vec3f vec, t_vec3f angle);
 
 /*
 ** Maths

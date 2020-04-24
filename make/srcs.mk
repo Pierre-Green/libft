@@ -75,6 +75,7 @@ FT_SRCS+=math/ft_idkpow.c
 FT_SRCS+=math/ft_abs.c
 FT_SRCS+=math/vec3f/init.c
 FT_SRCS+=math/vec3f/sub.c
+FT_SRCS+=math/vec3f/rotate.c
 FT_SRCS+=math/vec3f/cross.c
 FT_SRCS+=math/vec3f/len.c
 FT_SRCS+=math/vec3f/add.c
