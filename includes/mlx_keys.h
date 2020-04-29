@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 03:46:17 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 01:54:00 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/04/29 15:49:20 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@
 #  define KEY_S 115
 #  define KEY_D 100
 #  define KEY_C 99
+#  define KEY_R 114
+#  define KEY_F 102
 #  define KEY_ARROW_LEFT 65361
 #  define KEY_ARROW_UP 65362
 #  define KEY_ARROW_RIGHT 65363
