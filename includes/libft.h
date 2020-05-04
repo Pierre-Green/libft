@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/24 20:56:01 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/05/04 15:14:28 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,8 @@ size_t				ft_count_uint_base(uint64_t n, uint32_t base);
 unsigned int		ft_abs(int i);
 int					ft_min(int a, int b);
 int					ft_max(int a, int b);
+float				ft_fmin(float a, float b);
+float				ft_fmax(float a, float b);
 
 /*
 ** Lists

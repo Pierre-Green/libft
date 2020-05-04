@@ -6,13 +6,18 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/18 01:59:14 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 02:05:56 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/05/04 15:15:13 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 int		ft_max(int a, int b)
+{
+	return (a > b ? a : b);
+}
+
+float	ft_fmax(float a, float b)
 {
 	return (a > b ? a : b);
 }
