@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 20:50:54 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/24 20:56:18 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/05/05 17:36:55 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ t_vec3f		ft_vec3f_rotz(t_vec3f vec, float z)
 
 t_vec3f		ft_vec3f_rot(t_vec3f vec, t_vec3f angle)
 {
-	vec = ft_vec3f_rotx(vec, angle.x);
-	vec = ft_vec3f_roty(vec, angle.y);
-	vec = ft_vec3f_rotz(vec, angle.z);
+	vec = ft_vec3f_rotx(vec, (angle.x * 360) * M_PI / 180);
+	vec = ft_vec3f_roty(vec, (angle.y * 360) * M_PI / 180);
+	vec = ft_vec3f_rotz(vec, (angle.z * 360) * M_PI / 180);
     return (vec);
 }

@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/05/04 15:14:28 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/05/05 17:36:33 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 # ifndef GNL_BUFFER_SIZE
 #  define GNL_BUFFER_SIZE 32
 # endif
+# ifndef M_PI
+#  define M_PI 3.14159265358979323846
+# endif 
 
 typedef enum		e_bool
 {
