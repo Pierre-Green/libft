@@ -69,6 +69,7 @@ FT_SRCS+=io/printf/buff/write_alpha.c
 FT_SRCS+=io/printf/buff/write_num.c
 FT_SRCS+=io/printf/buff/flush.c
 FT_SRCS+=io/printf/buff/write_hex.c
+FT_SRCS+=math/fdeg2rad.c
 FT_SRCS+=math/ft_max.c
 FT_SRCS+=math/ft_pow.c
 FT_SRCS+=math/ft_idkpow.c
