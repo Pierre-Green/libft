@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 12:28:49 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 01:50:41 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/05/07 18:46:58 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ static int		process(const char *str)
 int				ft_atoi(const char *str)
 {
 	char		fac;
+	int			result;
 	const char	*trimmed = ft_strtrim(str, " \n\t\v\f\r");
 
 	if (!trimmed)
@@ -47,5 +48,7 @@ int				ft_atoi(const char *str)
 			fac = -1;
 		trimmed++;
 	}
-	return (fac * process(trimmed));
+	result = fac * process(trimmed);
+	free((void *)trimmed);
+	return (result);
 }
