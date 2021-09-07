@@ -6,13 +6,13 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 15:29:13 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/10/25 17:13:37 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/04/18 02:02:35 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void			ft_int_min(int fd)
+static void			ft_int_ft_min(int fd)
 {
 	ft_putstr_fd("-2147483648", fd);
 }
@@ -25,7 +25,7 @@ void				ft_putnbr_fd(int n, int fd)
 	int				tmp;
 
 	if (n == INT32_MIN)
-		return (ft_int_min(fd));
+		return (ft_int_ft_min(fd));
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);

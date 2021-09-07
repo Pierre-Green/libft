@@ -6,13 +6,14 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 00:54:57 by pguthaus          #+#    #+#             */
-/*   Updated: 2021/08/14 02:22:13 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 17:50:08 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # include "libft.h"
+# include <limits.h>
 
 typedef struct s_buff
 {

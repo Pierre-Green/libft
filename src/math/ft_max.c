@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dot.c                                              :+:      :+:    :+:   */
+/*   ft_max.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 19:01:12 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/05/08 17:51:22 by pguthaus         ###   ########.fr       */
+/*   Created: 2020/04/18 01:59:14 by pguthaus          #+#    #+#             */
+/*   Updated: 2020/05/04 15:15:13 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float				v3f_dot(t_vec3f vec1, t_vec3f vec2)
+int		ft_max(int a, int b)
 {
-	return (vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z);
+	return (a > b ? a : b);
+}
+
+float	ft_fmax(float a, float b)
+{
+	return (a > b ? a : b);
 }

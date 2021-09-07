@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dot.c                                              :+:      :+:    :+:   */
+/*   fdeg2rad.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 19:01:12 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/05/08 17:51:22 by pguthaus         ###   ########.fr       */
+/*   Created: 2020/05/07 17:49:23 by pguthaus          #+#    #+#             */
+/*   Updated: 2020/05/11 16:05:14 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float				v3f_dot(t_vec3f vec1, t_vec3f vec2)
+float				fdeg2rad(float f)
 {
-	return (vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z);
+	const float		pi_on_180 = 4.0f * atanf(1.0) / 180;
+
+	return (f * pi_on_180);
 }

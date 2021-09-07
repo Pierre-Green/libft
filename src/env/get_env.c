@@ -1,18 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dot.c                                              :+:      :+:    :+:   */
+/*   get_env.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 19:01:12 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/05/08 17:51:22 by pguthaus         ###   ########.fr       */
+/*   Created: 2020/03/05 22:04:17 by pguthaus          #+#    #+#             */
+/*   Updated: 2020/03/05 22:19:19 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float				v3f_dot(t_vec3f vec1, t_vec3f vec2)
+static char			*extract_value(char *env)
 {
-	return (vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z);
+	unsigned int	i;
+
+	i = 0;
+	while (env[i] && env[i] != '=')
+		i++;
+	if (env[i] == '=')
+		i++;
+	return (env + i);
+}
+
+char				*get_env(const char *key, char **env)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (env[i])
+	{
+		if (ft_strncmp(key, env[i], ft_strlen(key)) == 0)
+			return (extract_value(env[i]));
+		i++;
+	}
+	return (NULL);
 }

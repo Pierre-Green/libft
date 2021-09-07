@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2021/08/14 02:21:41 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 17:50:08 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdarg.h>
+# include <stdint.h>
 # include <math.h>
+# include "mlx_keys.h"
 # ifndef GNL_BUFFER_SIZE
 #  define GNL_BUFFER_SIZE 32
 # endif
-# define MAX(a, b) (a < b ? b : a)
-# define MIN(a, b) (a < b ? a : b)
+# ifndef M_PI
+#  define M_PI 3.14159265358979323846
+# endif
 
 typedef enum		e_bool
 {
@@ -48,12 +51,14 @@ void				*ft_calloc(size_t count, size_t size);
 size_t				ft_strlen(const char *s);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
+int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 char				*ft_strnstr(const char *haystack, const char *needle,
 	size_t len);
 char				*ft_strdup(const char *s1);
+char				*ft_strndup(const char *s1, size_t n);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s1, char const *set);
@@ -103,16 +108,21 @@ typedef struct		s_vec3f
 	float			y;
 	float			z;
 }					t_vec3f;
-t_vec3f				ft_vec3f_init(float x, float y, float z);
-t_vec3f				ft_vec3f_init1(float a);
-t_vec3f				ft_vec3f_add(t_vec3f vec1, t_vec3f vec2);
-t_vec3f				ft_vec3f_sub(t_vec3f vec1, t_vec3f vec2);
-t_vec3f				ft_vec3f_mul(t_vec3f vec, float fac);
-t_vec3f				ft_vec3f_cross(t_vec3f vec1, t_vec3f vec2);
-t_vec3f				ft_vec3f_normalize(t_vec3f vec);
-float				ft_vec3f_dot(t_vec3f vec1, t_vec3f vec2);
-float				ft_vec3f_norm(t_vec3f vec);
-float				ft_vec3f_len(t_vec3f vec);
+t_vec3f				v3f_init(float x, float y, float z);
+t_vec3f				v3f_init1(float a);
+t_vec3f				v3f_add(t_vec3f vec1, t_vec3f vec2);
+t_vec3f				v3f_sub(t_vec3f vec1, t_vec3f vec2);
+t_vec3f				v3f_mul(t_vec3f vec, float fac);
+t_vec3f				v3f_cross(t_vec3f vec1, t_vec3f vec2);
+t_vec3f				v3f_normalize(t_vec3f vec);
+float				v3f_dot(t_vec3f vec1, t_vec3f vec2);
+float				v3f_norm(t_vec3f vec);
+float				v3f_len(t_vec3f vec);
+float				v3f_dist(t_vec3f vec1, t_vec3f vec2);
+t_vec3f				v3f_rotx(t_vec3f vec, float x);
+t_vec3f				v3f_roty(t_vec3f vec, float y);
+t_vec3f				v3f_rotz(t_vec3f vec, float z);
+t_vec3f				v3f_rot(t_vec3f vec, t_vec3f angle);
 
 /*
 ** Maths
@@ -120,6 +130,12 @@ float				ft_vec3f_len(t_vec3f vec);
 size_t				ft_pow(int n, int power);
 size_t				ft_idkpow(int n, int powa);
 size_t				ft_count_uint_base(uint64_t n, uint32_t base);
+unsigned int		ft_abs(int i);
+int					ft_min(int a, int b);
+int					ft_max(int a, int b);
+float				ft_fmin(float a, float b);
+float				ft_fmax(float a, float b);
+float				fdeg2rad(float f);
 
 /*
 ** Lists
@@ -166,4 +182,8 @@ t_color				ft_color_set_g(t_color color, uint8_t g);
 t_color				ft_color_set_b(t_color color, uint8_t b);
 t_color				ft_color_set_a(t_color color, uint8_t a);
 
+/*
+** Env
+*/
+char				*get_env(const char *key, char **env);
 #endif

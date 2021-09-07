@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 12:36:49 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/26 00:58:02 by pguthaus         ###   ########.fr       */
+/*   Updated: 2020/04/18 01:57:21 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void						convert_percent(t_state *state, t_fmt fmt)
 
 	offset = 0;
 	if (fmt.precision < 0)
-		fmt.minwidth = ABS(fmt.precision);
+		fmt.minwidth = ft_abs(fmt.precision);
 	if (fmt.minwidth)
 		offset = fmt.minwidth - 1;
 	if (fmt.flags & FLAG_NEGATIV || fmt.precision < 0)

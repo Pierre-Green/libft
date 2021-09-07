@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dot.c                                              :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/25 19:01:12 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/05/08 17:51:22 by pguthaus         ###   ########.fr       */
+/*   Created: 2020/01/07 19:43:00 by pguthaus          #+#    #+#             */
+/*   Updated: 2020/01/07 19:43:57 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float				v3f_dot(t_vec3f vec1, t_vec3f vec2)
+char				*ft_strndup(const char *s1, size_t n)
 {
-	return (vec1.x * vec2.x + vec1.y * vec2.y + vec1.z * vec2.z);
+	char			*result;
+
+	if ((result = ft_calloc(n + 1, sizeof(char))) == NULL)
+		return (NULL);
+	ft_memcpy(result, s1, n);
+	return (result);
 }
