@@ -6,13 +6,13 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 19:01:22 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/29 05:10:48 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 17:55:33 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-void		test_fmt_poly(void)
+void	test_fmt_poly(void)
 {
 	printf_assert("Test poly 1", "|%d: %s; %c|", INT_MIN,
 		"j'aime le cacao", 'z');

@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:59:16 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/10/15 17:10:29 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 17:52:02 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include "buff.h"
 # include <stdarg.h>
 
-typedef struct		s_state
+typedef struct s_state
 {
 	t_buff			*buff;
 	size_t			count;

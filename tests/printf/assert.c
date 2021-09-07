@@ -6,13 +6,13 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 16:07:22 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/10/17 15:21:41 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 17:56:34 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tests.h"
 
-void			printf_assert(char const *name, char const *format, ...)
+void	printf_assert(char const *name, char const *format, ...)
 {
 	va_list		args;
 	int			ret1;

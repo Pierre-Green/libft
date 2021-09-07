@@ -6,13 +6,13 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/25 19:01:53 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/05/08 17:51:22 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:24:49 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float				v3f_len(t_vec3f vec)
+float	v3f_len(t_vec3f vec)
 {
 	return (sqrtf(v3f_norm(vec)));
 }

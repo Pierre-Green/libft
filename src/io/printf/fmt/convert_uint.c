@@ -6,14 +6,14 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 20:10:43 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 02:01:52 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:14:07 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf/fmt.h"
 #include "printf/buff.h"
 
-static size_t			write_uint(unsigned int value, t_buff *buff,
+static size_t	write_uint(unsigned int value, t_buff *buff,
 	size_t len)
 {
 	size_t				count;
@@ -22,13 +22,13 @@ static size_t			write_uint(unsigned int value, t_buff *buff,
 	if (len)
 	{
 		count += buff_write_nchar(buff,
-			len - ft_count_uint_base(value, 10), '0');
+				len - ft_count_uint_base(value, 10), '0');
 		count += buff_write_uint(buff, value);
 	}
 	return (count);
 }
 
-static void				convert_uint_negativ(t_state *state, t_fmt fmt,
+static void	convert_uint_negativ(t_state *state, t_fmt fmt,
 	size_t len)
 {
 	size_t				minwidth;
@@ -38,7 +38,7 @@ static void				convert_uint_negativ(t_state *state, t_fmt fmt,
 	state->count += buff_write_nchar(state->buff, minwidth - len, ' ');
 }
 
-static void				convert_uint_zeropad(t_state *state, t_fmt fmt,
+static void	convert_uint_zeropad(t_state *state, t_fmt fmt,
 	size_t len)
 {
 	size_t				minwidth;
@@ -47,7 +47,7 @@ static void				convert_uint_zeropad(t_state *state, t_fmt fmt,
 	state->count += write_uint(fmt.value.u, state->buff, minwidth);
 }
 
-static void				convert_uint_default(t_state *state, t_fmt fmt,
+static void	convert_uint_default(t_state *state, t_fmt fmt,
 	size_t len)
 {
 	size_t				minwidth;
@@ -57,7 +57,7 @@ static void				convert_uint_default(t_state *state, t_fmt fmt,
 		+ write_uint(fmt.value.u, state->buff, len);
 }
 
-void					convert_uint(t_state *state, t_fmt fmt)
+void	convert_uint(t_state *state, t_fmt fmt)
 {
 	const unsigned int	value = fmt.value.u;
 	size_t				len;

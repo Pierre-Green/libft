@@ -6,13 +6,13 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/05 22:04:17 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/03/05 22:19:19 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:00:47 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char			*extract_value(char *env)
+static char	*extract_value(char *env)
 {
 	unsigned int	i;
 
@@ -24,7 +24,7 @@ static char			*extract_value(char *env)
 	return (env + i);
 }
 
-char				*get_env(const char *key, char **env)
+char	*get_env(const char *key, char **env)
 {
 	unsigned int	i;
 

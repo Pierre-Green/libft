@@ -6,13 +6,13 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 12:36:49 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 01:57:21 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:07:03 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf/fmt.h"
 
-void						convert_percent(t_state *state, t_fmt fmt)
+void	convert_percent(t_state *state, t_fmt fmt)
 {
 	size_t					offset;
 

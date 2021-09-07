@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:54:03 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 01:51:31 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:13:36 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,24 +38,27 @@ static t_convert_valu		g_values[1 << 7] = {
 	['X'] = value_uint
 };
 
-static t_fmt		get_initial_fmt(void)
+static t_fmt	get_initial_fmt(void)
 {
-	return ((t_fmt){ 0, 0, 0, 0, 0, { 0 } });
+	return ((t_fmt){0, 0, 0, 0, 0, {0}});
 }
 
-static t_fmt		parse_flags(t_state *state, t_fmt fmt)
+static t_fmt	parse_flags(t_state *state, t_fmt fmt)
 {
 	t_flag			flag;
 
-	while ((flag = g_flags[(unsigned char)*state->frmt]))
+	while (true)
 	{
+		flag = g_flags[(unsigned char)*state->frmt];
+		if (!flag)
+			break ;
 		fmt.flags |= flag;
 		state->frmt++;
 	}
 	return (fmt);
 }
 
-static t_fmt		parse_minwidth(t_state *state, t_fmt fmt)
+static t_fmt	parse_minwidth(t_state *state, t_fmt fmt)
 {
 	if (*state->frmt == '*')
 	{
@@ -63,16 +66,18 @@ static t_fmt		parse_minwidth(t_state *state, t_fmt fmt)
 		state->frmt++;
 	}
 	else
+	{
 		while (*state->frmt >= '0' && *state->frmt <= '9')
 		{
 			fmt.minwidth *= 10;
 			fmt.minwidth += (*state->frmt) - '0';
 			state->frmt++;
 		}
+	}
 	return (fmt);
 }
 
-static t_fmt		parse_precision(t_state *state, t_fmt fmt)
+static t_fmt	parse_precision(t_state *state, t_fmt fmt)
 {
 	if (*state->frmt && *state->frmt == '.')
 	{
@@ -93,13 +98,14 @@ static t_fmt		parse_precision(t_state *state, t_fmt fmt)
 				fmt.precision += (*state->frmt) - '0';
 				state->frmt++;
 			}
-			fmt.precision = (fmt.negprec ? fmt.precision * -1 : fmt.precision);
+			if (fmt.negprec)
+				fmt.precision *= -1;
 		}
 	}
 	return (fmt);
 }
 
-void				fmt(t_state *state)
+void	fmt(t_state *state)
 {
 	t_fmt			fmt;
 	t_convert_func	f_conv;
@@ -110,9 +116,11 @@ void				fmt(t_state *state)
 	fmt = parse_flags(state, fmt);
 	fmt = parse_minwidth(state, fmt);
 	fmt = parse_precision(state, fmt);
-	if (!(f_conv = g_conversions[(unsigned char)*state->frmt]))
+	f_conv = g_conversions[(unsigned char)*state->frmt];
+	if (!f_conv)
 		return ;
-	if ((f_valu = g_values[(unsigned char)*state->frmt]))
+	f_valu = g_values[(unsigned char)*state->frmt];
+	if (f_valu)
 		fmt = f_valu(state, fmt);
 	f_conv(state, fmt);
 	state->frmt++;

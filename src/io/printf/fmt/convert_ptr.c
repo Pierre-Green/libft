@@ -6,13 +6,13 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/16 18:36:36 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 02:01:52 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:14:39 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf/fmt.h"
 
-static size_t		write_ptr(t_buff *buff, unsigned long int val,
+static size_t	write_ptr(t_buff *buff, unsigned long int val,
 	size_t minlen, t_bool none)
 {
 	size_t			count;
@@ -29,7 +29,7 @@ static size_t		write_ptr(t_buff *buff, unsigned long int val,
 	return (count);
 }
 
-static void			convert_ptr_negativ(t_state *state, t_fmt fmt, size_t len,
+static void	convert_ptr_negativ(t_state *state, t_fmt fmt, size_t len,
 	t_bool none)
 {
 	size_t			minwidth;
@@ -43,14 +43,14 @@ static void			convert_ptr_negativ(t_state *state, t_fmt fmt, size_t len,
 	state->count += buff_write_nchar(state->buff, minwidth - len, ' ');
 }
 
-static void			convert_ptr_zeropad(t_state *state, t_fmt fmt, size_t len,
+static void	convert_ptr_zeropad(t_state *state, t_fmt fmt, size_t len,
 	t_bool none)
 {
 	state->count += write_ptr(state->buff, fmt.value.u,
-		ft_max(len, fmt.minwidth) - 2, none);
+			ft_max(len, fmt.minwidth) - 2, none);
 }
 
-static void			convert_ptr_default(t_state *state, t_fmt fmt, size_t len,
+static void	convert_ptr_default(t_state *state, t_fmt fmt, size_t len,
 	t_bool none)
 {
 	size_t			minwidth;
@@ -58,10 +58,10 @@ static void			convert_ptr_default(t_state *state, t_fmt fmt, size_t len,
 	minwidth = ft_max(len, fmt.minwidth);
 	state->count += buff_write_nchar(state->buff, minwidth - len, ' ');
 	state->count += write_ptr(state->buff, fmt.value.u,
-		ft_max(len - 2, (size_t)fmt.precision), none);
+			ft_max(len - 2, (size_t)fmt.precision), none);
 }
 
-void				convert_ptr(t_state *state, t_fmt fmt)
+void	convert_ptr(t_state *state, t_fmt fmt)
 {
 	size_t			len;
 	t_bool			none;

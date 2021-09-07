@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/18 01:54:57 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 02:06:14 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:22:08 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 unsigned int	ft_abs(int i)
 {
-	return (i >= 0 ? i : -i);
+	if (i >= 0)
+		return (i);
+	return (-i);
 }

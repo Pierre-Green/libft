@@ -6,14 +6,14 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 20:10:43 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 02:01:52 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:08:23 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf/fmt.h"
 #include "printf/buff.h"
 
-static size_t		write_int(int value, t_buff *buff, size_t len,
+static size_t	write_int(int value, t_buff *buff, size_t len,
 	size_t minwidth)
 {
 	unsigned int	u_value;
@@ -25,7 +25,7 @@ static size_t		write_int(int value, t_buff *buff, size_t len,
 	{
 		len++;
 		count += buff_write_uchar(buff, '-');
-		u_value = (unsigned int)(value) * -1;
+		u_value = (unsigned int)(value) *-1;
 	}
 	if (minwidth)
 	{
@@ -35,7 +35,7 @@ static size_t		write_int(int value, t_buff *buff, size_t len,
 	return (count);
 }
 
-static void			convert_int_negativ(t_state *state, t_fmt fmt, size_t len)
+static void	convert_int_negativ(t_state *state, t_fmt fmt, size_t len)
 {
 	const int		value = fmt.value.i;
 	size_t			minwidth;
@@ -51,7 +51,7 @@ static void			convert_int_negativ(t_state *state, t_fmt fmt, size_t len)
 		+ buff_write_nchar(state->buff, minwidth - len, ' ');
 }
 
-static void			convert_int_zeropad(t_state *state, t_fmt fmt)
+static void	convert_int_zeropad(t_state *state, t_fmt fmt)
 {
 	const int		value = fmt.value.i;
 	size_t			len;
@@ -62,7 +62,7 @@ static void			convert_int_zeropad(t_state *state, t_fmt fmt)
 	state->count += write_int(value, state->buff, len, minwidth);
 }
 
-static void			convert_int_default(t_state *state, t_fmt fmt, size_t len)
+static void	convert_int_default(t_state *state, t_fmt fmt, size_t len)
 {
 	const int		value = fmt.value.i;
 	size_t			minwidth;
@@ -77,7 +77,7 @@ static void			convert_int_default(t_state *state, t_fmt fmt, size_t len)
 			+ write_int(value, state->buff, count, len);
 }
 
-void				convert_int(t_state *state, t_fmt fmt)
+void	convert_int(t_state *state, t_fmt fmt)
 {
 	size_t			len;
 

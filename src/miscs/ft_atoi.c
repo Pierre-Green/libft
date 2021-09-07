@@ -14,7 +14,7 @@
 
 #include <stdio.h>
 
-static int		process(const char *str)
+static int	process(const char *str)
 {
 	int			result;
 
@@ -33,7 +33,7 @@ static int		process(const char *str)
 	return (result);
 }
 
-int				ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	char		fac;
 	int			result;

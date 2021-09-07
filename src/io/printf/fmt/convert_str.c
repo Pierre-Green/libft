@@ -6,14 +6,14 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 20:06:38 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 02:04:56 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:15:44 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf/fmt.h"
 #include "printf/buff.h"
 
-static size_t		fmt_strlen(char *str, t_fmt fmt)
+static size_t	fmt_strlen(char *str, t_fmt fmt)
 {
 	size_t			i;
 
@@ -23,10 +23,13 @@ static size_t		fmt_strlen(char *str, t_fmt fmt)
 	else
 		while (*(str + i))
 			i++;
-	return ((fmt.precised ? (size_t)ft_min(i, (size_t)fmt.precision) : i));
+	if (fmt.precised)
+		return ((size_t)ft_min(i, (size_t)fmt.precision));
+	else
+		return (i);
 }
 
-static void			convert_str_negativ(t_state *state, t_fmt fmt, size_t len)
+static void	convert_str_negativ(t_state *state, t_fmt fmt, size_t len)
 {
 	size_t			minwidth;
 
@@ -38,7 +41,7 @@ static void			convert_str_negativ(t_state *state, t_fmt fmt, size_t len)
 	state->count += buff_write_nchar(state->buff, minwidth - len, ' ');
 }
 
-static void			convert_str_zeropad(t_state *state, t_fmt fmt, size_t len)
+static void	convert_str_zeropad(t_state *state, t_fmt fmt, size_t len)
 {
 	size_t			minwidth;
 
@@ -50,7 +53,7 @@ static void			convert_str_zeropad(t_state *state, t_fmt fmt, size_t len)
 		state->count += buff_write_strl(state->buff, STR_NULL, len);
 }
 
-static void			convert_str_default(t_state *state, t_fmt fmt, size_t len)
+static void	convert_str_default(t_state *state, t_fmt fmt, size_t len)
 {
 	size_t			minwidth;
 
@@ -62,13 +65,13 @@ static void			convert_str_default(t_state *state, t_fmt fmt, size_t len)
 		state->count += buff_write_strl(state->buff, STR_NULL, len);
 }
 
-void				convert_str(t_state *state, t_fmt fmt)
+void	convert_str(t_state *state, t_fmt fmt)
 {
 	const size_t	len = fmt_strlen(fmt.value.s, fmt);
 
 	if (fmt.precision < 0)
 		state->count += buff_write_nchar(state->buff,
-		ft_abs(fmt.precision), ' ');
+				ft_abs(fmt.precision), ' ');
 	else
 	{
 		if (fmt.flags & FLAG_NEGATIV)

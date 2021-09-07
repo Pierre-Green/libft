@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t				ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	const size_t	dst_len = ft_strlen(dst);
 	const size_t	src_len = ft_strlen(src);

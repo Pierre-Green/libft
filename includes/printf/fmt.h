@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:54:11 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 01:51:04 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 17:54:05 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 
 typedef uint32_t			t_flag;
 
-typedef struct				s_fmt
+typedef struct s_fmt
 {
 	t_flag					flags;
 	size_t					minwidth;
@@ -38,7 +38,6 @@ typedef struct				s_fmt
 		char				*s;
 		void				*p;
 	}						value;
-
 }							t_fmt;
 void						fmt(t_state *state);
 

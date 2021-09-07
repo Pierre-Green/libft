@@ -6,41 +6,36 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 16:09:13 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/26 00:56:58 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/08 00:33:04 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t				len_to_eol(t_buff *buff)
+int	flush_el(t_buff **buff, char **line)
 {
-	t_buff			*node;
-	size_t			len;
-	size_t			i;
+	char			eof;
 
-	node = buff;
-	len = 0;
-	while (node->next && !node->eol && (len += node->len))
-		node = node->next;
-	if (node->eol)
+	*line = malloc(sizeof(char));
+	if (!(*line))
+		return (-1);
+	(*line)[0] = 0;
+	if ((*buff)->len == 0)
 	{
-		i = 0;
-		while (i < node->len)
+		eof = (*buff)->eof;
+		clear_buff_next(*buff);
+		if (eof)
 		{
-			if (node->buff[i] == '\n')
-			{
-				len += i;
-				break ;
-			}
-			i++;
+			*buff = 0;
+			return (0);
 		}
 	}
-	else if (!node->next)
-		len += node->len;
-	return (len);
+	else
+		trim_buff(*buff, 0);
+	return (1);
 }
 
-void				trim_buff(t_buff *buff, unsigned int nl)
+void	trim_buff(t_buff *buff, unsigned int nl)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -62,7 +57,7 @@ void				trim_buff(t_buff *buff, unsigned int nl)
 	buff->len = j;
 }
 
-t_buff				*clear_buff_next(t_buff *buff)
+t_buff	*clear_buff_next(t_buff *buff)
 {
 	t_buff			*ptr;
 
@@ -71,7 +66,7 @@ t_buff				*clear_buff_next(t_buff *buff)
 	return (ptr);
 }
 
-static size_t		do_buff(t_buff **buff, char **line, unsigned int i,
+static size_t	do_buff(t_buff **buff, char **line, unsigned int i,
 	char *lock_el)
 {
 	size_t			j;
@@ -98,7 +93,7 @@ static size_t		do_buff(t_buff **buff, char **line, unsigned int i,
 	return (j);
 }
 
-int					flush_to_eol(t_buff **buff, char **line)
+int	flush_to_eol(t_buff **buff, char **line)
 {
 	const size_t	len = len_to_eol(*buff);
 	unsigned int	i;
@@ -106,7 +101,8 @@ int					flush_to_eol(t_buff **buff, char **line)
 
 	if ((*buff)->buff[0] == '\n' && (*buff)->eol && (*buff)->len)
 		return (flush_el(buff, line));
-	if (!(*line = malloc(sizeof(char) * (len + 1))))
+	*line = malloc(sizeof(char) * (len + 1));
+	if (!(*line))
 		return (-1);
 	(*line)[len] = 0;
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 15:19:13 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/26 00:59:25 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:17:38 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ static t_state	*get_initial_state(const char *format, va_list args)
 {
 	t_state		*state;
 
-	if (!(state = (t_state *)malloc(sizeof(t_state))))
+	state = (t_state *)malloc(sizeof(t_state));
+	if (!state)
 		return (NULL);
 	state->count = 0;
 	state->frmt = (char *)format;
 	va_copy(state->args, args);
-	if (!(state->buff = (t_buff *)malloc(sizeof(t_buff))))
+	state->buff = (t_buff *)malloc(sizeof(t_buff));
+	if (!state->buff)
 	{
 		clear_state(state);
 		return (NULL);
@@ -31,12 +33,13 @@ static t_state	*get_initial_state(const char *format, va_list args)
 	return (state);
 }
 
-int				ft_printf_va(const char *format, va_list args)
+int	ft_printf_va(const char *format, va_list args)
 {
 	t_state		*state;
 	size_t		count;
 
-	if (!(state = get_initial_state(format, args)))
+	state = get_initial_state(format, args);
+	if (!state)
 		return (-42);
 	while (*state->frmt)
 	{
@@ -47,7 +50,7 @@ int				ft_printf_va(const char *format, va_list args)
 			while (*state->frmt && *state->frmt != '%')
 			{
 				state->count += buff_write_uchar(state->buff,
-					(unsigned char)*state->frmt);
+						(unsigned char)*state->frmt);
 				state->frmt++;
 			}
 		}
@@ -58,7 +61,7 @@ int				ft_printf_va(const char *format, va_list args)
 	return (count);
 }
 
-int				ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list		args;
 	int			result;

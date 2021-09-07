@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int		is_in_set(char c, char const *set)
+static int	is_in_set(char c, char const *set)
 {
 	const char	*ptr = set;
 
@@ -25,7 +25,7 @@ static int		is_in_set(char c, char const *set)
 	return (0);
 }
 
-char			*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t		from;
 	size_t		to;

@@ -7,7 +7,7 @@ SOURCEMAP		=			make/srcs.mk
 UNAME_S         :=          $(shell uname)
 
 # Compilation
-CC				=			gcc
+CC				=			clang
 
 # Paths
 SRCDIR			=			./src/

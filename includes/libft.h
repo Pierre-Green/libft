@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2021/09/07 17:50:08 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 17:51:45 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 #  define M_PI 3.14159265358979323846
 # endif
 
-typedef enum		e_bool
+typedef enum e_bool
 {
 	false = 0,
 	true = 42
@@ -56,7 +56,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 char				*ft_strnstr(const char *haystack, const char *needle,
-	size_t len);
+						size_t len);
 char				*ft_strdup(const char *s1);
 char				*ft_strndup(const char *s1, size_t n);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
@@ -102,7 +102,7 @@ int					ft_tolower(int c);
 /*
 ** Vecs
 */
-typedef struct		s_vec3f
+typedef struct s_vec3f
 {
 	float			x;
 	float			y;
@@ -140,7 +140,7 @@ float				fdeg2rad(float f);
 /*
 ** Lists
 */
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -154,12 +154,12 @@ void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-	void (*del)(void *));
+						void (*del)(void *));
 
 /*
 ** Args
 */
-typedef struct		s_args
+typedef struct s_args
 {
 	size_t			count;
 	char			**args;

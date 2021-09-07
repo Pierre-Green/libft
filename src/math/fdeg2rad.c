@@ -6,13 +6,13 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 17:49:23 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/05/11 16:05:14 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:22:43 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float				fdeg2rad(float f)
+float	fdeg2rad(float f)
 {
 	const float		pi_on_180 = 4.0f * atanf(1.0) / 180;
 

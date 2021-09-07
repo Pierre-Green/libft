@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t		length(size_t powa, const char sign)
+static size_t	length(size_t powa, const char sign)
 {
 	size_t			len;
 
@@ -22,14 +22,19 @@ static size_t		length(size_t powa, const char sign)
 	return (len);
 }
 
-char				*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	const char		sign = n >= 0 ? 0 : '-';
+	char			sign;
 	size_t			pow;
 	char			*result;
 
 	pow = ft_count_uint_base(n, 10);
-	if ((result = ft_calloc(length(pow, sign) + 1, sizeof(char))) == NULL)
+	if (n >= 0)
+		sign = 0;
+	else
+		sign = '-';
+	result = ft_calloc(length(pow, sign) + 1, sizeof(char));
+	if (result == NULL)
 		return (NULL);
 	if (!sign)
 		n = -n;

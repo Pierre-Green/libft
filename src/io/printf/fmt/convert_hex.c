@@ -6,14 +6,14 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 20:13:41 by pguthaus          #+#    #+#             */
-/*   Updated: 2020/04/18 02:01:52 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:06:47 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf/fmt.h"
 #include "printf/buff.h"
 
-static size_t				write_hex(t_buff *buff, unsigned int value,
+static size_t	write_hex(t_buff *buff, unsigned int value,
 	size_t zero_len)
 {
 	size_t					count;
@@ -24,7 +24,7 @@ static size_t				write_hex(t_buff *buff, unsigned int value,
 	return (count);
 }
 
-static void					convert_hex_negativ(t_state *state, t_fmt fmt,
+static void	convert_hex_negativ(t_state *state, t_fmt fmt,
 	size_t len)
 {
 	const size_t			minwidth = ft_max(len, fmt.minwidth);
@@ -35,7 +35,7 @@ static void					convert_hex_negativ(t_state *state, t_fmt fmt,
 		+ buff_write_nchar(state->buff, minwidth - len, ' ');
 }
 
-static void					convert_hex_zeropad(t_state *state, t_fmt fmt,
+static void	convert_hex_zeropad(t_state *state, t_fmt fmt,
 	size_t len)
 {
 	const size_t			minwidth = ft_max(len, fmt.minwidth);
@@ -44,7 +44,7 @@ static void					convert_hex_zeropad(t_state *state, t_fmt fmt,
 	state->count += write_hex(state->buff, value, minwidth - len);
 }
 
-static void					convert_hex_default(t_state *state, t_fmt fmt,
+static void	convert_hex_default(t_state *state, t_fmt fmt,
 	size_t len)
 {
 	const size_t			minwidth = ft_max(len, fmt.minwidth);
@@ -58,7 +58,7 @@ static void					convert_hex_default(t_state *state, t_fmt fmt,
 		state->count += write_hex(state->buff, value, len - count);
 }
 
-void						convert_hex(t_state *state, t_fmt fmt)
+void	convert_hex(t_state *state, t_fmt fmt)
 {
 	size_t					len;
 

@@ -6,13 +6,13 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 16:30:03 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/10/08 16:45:44 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/07 18:22:24 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t				ft_pow(int n, int power)
+size_t	ft_pow(int n, int power)
 {
 	while (power--)
 		n *= n;
