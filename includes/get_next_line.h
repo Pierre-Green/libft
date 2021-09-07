@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/26 00:54:57 by pguthaus          #+#    #+#             */
-/*   Updated: 2019/11/29 05:10:08 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/08/14 02:22:13 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_H
 # include "libft.h"
 
-typedef struct		s_buff
+typedef struct s_buff
 {
 	char			buff[GNL_BUFFER_SIZE];
 	size_t			len;
