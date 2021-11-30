@@ -40,7 +40,8 @@ char	*ft_itoa(int n)
 		n = -n;
 	while (pow)
 	{
-		result[length(pow--, sign) - 1] = -(n % 10) + '0';
+		result[length(pow, sign) - 1] = -(n % 10) + '0';
+		pow--;
 		n /= 10;
 	}
 	if (sign)

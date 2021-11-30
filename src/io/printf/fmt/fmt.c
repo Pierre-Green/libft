@@ -13,29 +13,29 @@
 #include "printf/fmt.h"
 
 static t_flag				g_flags[1 << 7] = {
-	['0'] = FLAG_ZEROPAD,
-	['-'] = FLAG_NEGATIV
+['0'] = FLAG_ZEROPAD,
+['-'] = FLAG_NEGATIV
 };
 static t_convert_func		g_conversions[1 << 7] = {
-	['c'] = convert_char,
-	['s'] = convert_str,
-	['p'] = convert_ptr,
-	['d'] = convert_int,
-	['i'] = convert_int,
-	['u'] = convert_uint,
-	['x'] = convert_hex,
-	['X'] = convert_hex_up,
-	['%'] = convert_percent
+['c'] = convert_char,
+['s'] = convert_str,
+['p'] = convert_ptr,
+['d'] = convert_int,
+['i'] = convert_int,
+['u'] = convert_uint,
+['x'] = convert_hex,
+['X'] = convert_hex_up,
+['%'] = convert_percent
 };
 static t_convert_valu		g_values[1 << 7] = {
-	['c'] = value_int,
-	['s'] = value_str,
-	['p'] = value_ptr,
-	['d'] = value_int,
-	['i'] = value_int,
-	['u'] = value_uint,
-	['x'] = value_uint,
-	['X'] = value_uint
+['c'] = value_int,
+['s'] = value_str,
+['p'] = value_ptr,
+['d'] = value_int,
+['i'] = value_int,
+['u'] = value_uint,
+['x'] = value_uint,
+['X'] = value_uint
 };
 
 static t_fmt	get_initial_fmt(void)

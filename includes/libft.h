@@ -135,10 +135,6 @@ int					ft_min(int a, int b);
 int					ft_max(int a, int b);
 float				ft_fmin(float a, float b);
 float				ft_fmax(float a, float b);
-float				ft_mapf(float v, float source_min, float source_max,
-						float dest_min, float dest_max);
-int					ft_mapi(int v, int source_min, int source_max,
-						int dest_min, int dest_max);
 float				fdeg2rad(float f);
 
 /*
