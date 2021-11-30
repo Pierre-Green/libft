@@ -14,7 +14,6 @@ FT_SRCS+=math/ft_count_uint_base.c
 FT_SRCS+=math/ft_idkpow.c
 FT_SRCS+=math/ft_min.c
 FT_SRCS+=math/ft_pow.c
-FT_SRCS+=math/ft_map.c
 FT_SRCS+=math/ft_abs.c
 FT_SRCS+=env/get_env.c
 FT_SRCS+=miscs/ft_atoi.c
