@@ -6,7 +6,7 @@
 /*   By: pguthaus <pguthaus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 11:39:29 by pguthaus          #+#    #+#             */
-/*   Updated: 2021/09/07 17:51:45 by pguthaus         ###   ########.fr       */
+/*   Updated: 2021/09/08 18:27:45 by pguthaus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,10 @@ int					ft_min(int a, int b);
 int					ft_max(int a, int b);
 float				ft_fmin(float a, float b);
 float				ft_fmax(float a, float b);
+float				ft_mapf(float v, float source_min, float source_max,
+						float dest_min, float dest_max);
+int					ft_mapi(int v, int source_min, int source_max,
+						int dest_min, int dest_max);
 float				fdeg2rad(float f);
 
 /*
