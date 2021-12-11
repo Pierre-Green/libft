@@ -38,6 +38,7 @@ int	ft_atoi(const char *str)
 	char		fac;
 	int			result;
 	const char	*trimmed = ft_strtrim(str, " \n\t\v\f\r");
+	const char	*timmed_ptr = trimmed;
 
 	if (!trimmed)
 		return (0);
@@ -49,6 +50,6 @@ int	ft_atoi(const char *str)
 		trimmed++;
 	}
 	result = fac * process(trimmed);
-	free((void *)trimmed);
+	free((void *)timmed_ptr);
 	return (result);
 }
